@@ -83,7 +83,7 @@ gssfinal4 <- gssfinal3 %>%
          race_lessHS = interaction(race, lessHS))
 
 # read onet data on noise
-onet_broad <- readRDS("Data/Processed Data/ONET/process_onet_noise_2019.rds") %>%
+onet_broad <- readRDS("Data/process_onet_noise_2019.rds") %>%
   mutate(broad_soc = str_replace(soc_2010_code, "\\d$", "0")) %>%
   group_by(broad_soc) %>%
   summarise(Texposed_hrs = mean(Texposed_hrs))
